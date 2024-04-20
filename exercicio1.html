@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício DOM</title>
+</head>
+<body>
+    
+    <h1 id = "mensagem">olá</h1>
+    <button onclick="mudarCor()">Mudar Cor do Texto</button>
+    <button onclick="mudarTexto()">Mudar Texto</button>
+    
+
+    <script>
+function mudarTexto(){
+var elemento = document.getElementById('mensagem');
+elemento.textContent = "Texto alterado!";
+}
+        
+
+        
+</script>
+
+<script>
+    function mudarCor() {
+            let titulo = document.getElementById('mensagem')
+            titulo.style.color = "blue";
+    }
+
+</script>
+</body>
+</html>

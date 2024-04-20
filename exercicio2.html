@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Dinâmica</title>
+</head>
+<body>
+    <form id="form-adicionar">
+        <input type="text" id="novo-item" placeholder="Digite o novo item">
+        <button type="submit">Adicionar Item</button>
+    
+    </form>
+    <ul id="lista-itens"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formAdicionar = document.getElementById('form-adicionar');
+            const listaItens = document.getElementById('lista-itens');
+            let contador = 0;
+
+            formAdicionar.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const novoItem = document.getElementById('novo-item').value;
+                if (novoItem) {
+                    contador++;
+                    const li = document.createElement('li');
+                    li.textContent = `Novo Item ${contador}: ${novoItem}`;
+                    const botaoRemover = document.createElement('button');
+                    botaoRemover.textContent = 'Remover';
+                    botaoRemover.addEventListener('click', function() {
+                        listaItens.removeChild(li);
+                    });
+                    li.appendChild(botaoRemover);
+                    listaItens.appendChild(li);
+                    document.getElementById('novo-item').value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
